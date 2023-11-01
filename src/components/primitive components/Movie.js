@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const CUSTOM_PLACEHOLDER_IMAGE =
   'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'
@@ -19,6 +20,10 @@ const Movie = ({ movie }) => {
       <p>({movie.Year})</p>
     </div>
   )
+}
+
+Movie.propTypes = {
+  movie: PropTypes.string.isRequired
 }
 
 export default Movie
