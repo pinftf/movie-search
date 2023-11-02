@@ -29,6 +29,6 @@ const SearchLogic = ({ search }) => {
 }
 
 SearchLogic.propTypes = {
-  search: PropTypes.string.isRequired
+  search: PropTypes.func.isRequired
 }
 export default SearchLogic
