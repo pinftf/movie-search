@@ -23,7 +23,7 @@ const Movie = ({ movie }) => {
 }
 
 Movie.propTypes = {
-  movie: PropTypes.string.isRequired
+  movie: PropTypes.object.isRequired
 }
 
 export default Movie
