@@ -1,0 +1,19 @@
+.header {
+  text-align: center;
+  border-bottom: 2px solid transparent;
+  padding: 1rem;
+  transition: border-color 0.3s;
+}
+
+.header:hover {
+  border-color: #3494e6; /* Change border color on hover */
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1rem;
+}
