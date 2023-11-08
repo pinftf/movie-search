@@ -1,10 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './MovieCard.css'
 
 const CUSTOM_PLACEHOLDER_IMAGE =
   'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'
 
 const Movie = ({ movie }) => {
+  if (!movie || typeof movie.Poster === 'undefined') {
+    return null
+  }
   const poster =
     movie.Poster === 'N/A' ? CUSTOM_PLACEHOLDER_IMAGE : movie.Poster
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchInput from './SearchInput'
+import SearchInput from './Search/SearchInput'
 import PropTypes from 'prop-types'
 import { useOMDBApi } from './useOMDBApi'
 

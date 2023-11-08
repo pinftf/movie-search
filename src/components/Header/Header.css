@@ -3,6 +3,9 @@
   border-bottom: 2px solid transparent;
   padding: 1rem;
   transition: border-color 0.3s;
+  font-family: 'Cinzel', sans-serif;
+  font-size: 36px;
+  letter-spacing: 10px;
 }
 
 .header:hover {

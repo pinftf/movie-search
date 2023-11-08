@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Input } from '../UI'
+import { Button, Input } from '../../UI'
+import './SearchInput.css'
 
 const SearchInput = ({
   searchValue,
@@ -8,13 +9,16 @@ const SearchInput = ({
   callSearchFunction
 }) => {
   return (
-    <div>
+    <div className="search-input-container">
       <Input
+        className="input-field"
         value={searchValue}
         onChange={handleSearchInputValues}
         type="text"
       />
-      <Button onClick={callSearchFunction}>Search</Button>
+      <Button className="search-button" onClick={callSearchFunction}>
+        Search
+      </Button>
     </div>
   )
 }
