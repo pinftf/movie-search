@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Heart = ({ color = 'red', size = 24 }) => {
+export const Heart = ({ color = 'red', size = 24 }) => {
   return (
     <div style={{ color, height: size, width: size }}>
       <svg

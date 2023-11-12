@@ -1,15 +1,12 @@
 import React from 'react'
-import SearchInput from './Search/SearchInput'
-import PropTypes from 'prop-types'
-import { useOMDBApi } from './useOMDBApi'
+import SearchInput from './SearchInput'
+import MovieCard from '../MovieCard/MovieCard'
+
+import { useOMDBApi } from '../useOMDBApi'
 
 const SearchLogic = () => {
-  const {
-    searchValue,
-    handleSearchInputValues,
-    callSearchFunction,
-    movieData
-  } = useOMDBApi()
+  const { searchValue, handleSearchInputValues, callSearchFunction, movies } =
+    useOMDBApi()
 
   return (
     <div>
@@ -19,17 +16,15 @@ const SearchLogic = () => {
         callSearchFunction={callSearchFunction}
       />
 
-      {movieData && (
-        <div>
-          <h2>{movieData.Title}</h2>
-          <img src={movieData.Poster} alt={movieData.Title} />
-          <p>({movieData.Year})</p>
-        </div>
-      )}
+      <div className="movie-list">
+        {movies && movies.length > 0 ? (
+          movies.map((movie, index) => <MovieCard key={index} movie={movie} />)
+        ) : (
+          <div>No movies found </div>
+        )}
+      </div>
     </div>
   )
 }
-SearchLogic.propTypes = {
-  search: PropTypes.func.isRequired
-}
+
 export default SearchLogic
