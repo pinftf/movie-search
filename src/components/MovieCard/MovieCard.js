@@ -37,7 +37,12 @@ const MovieCard = ({ movie }) => {
         />
       </div>
       <p>
-        ({movie.Year}) <Button onClick={handleFavoriteClick} icon={<Heart />} />
+        ({movie.Year}){' '}
+        <Button
+          classname={`favorite-button ${isFavorite ? 'active' : ''}`}
+          onClick={handleFavoriteClick}
+          icon={<Heart />}
+        />
       </p>
     </div>
   )

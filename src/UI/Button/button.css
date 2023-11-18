@@ -44,3 +44,31 @@
 .button--with-icon > div:first-child {
   margin-right: 12px;
 }
+
+.favorite-button {
+  background-color: transparent; /* Start with a transparent background */
+  color: #0a7cff; /* A bright blue that matches the movie card border */
+  border: 2px solid #0a7cff; /* Solid border to match */
+  padding: 5px 10px; /* Moderate padding */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Indicates it's clickable */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  display: inline-flex; /* Flex to align icon and text */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  margin-top: 10px; /* Space from the movie details */
+  font-size: 0.8rem; /* Smaller font size for the button text */
+  text-shadow: none; /* No text shadow for better readability */
+}
+
+.favorite-button:hover {
+  background-color: #0a7cff; /* Button background on hover */
+  color: #fff; /* White text on hover */
+  border-color: #3494e6; /* Lighter blue border on hover */
+}
+
+.favorite-button.active {
+  background-color: #eba714; /* Active state with a slightly different blue */
+  color: #fff;
+  border-color: #0a7cff;
+}

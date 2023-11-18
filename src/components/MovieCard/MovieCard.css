@@ -11,6 +11,9 @@
   flex-direction: column;
   padding: 10px;
   flex-grow: 1; /* Allows this section to fill the space after the image */
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 }
 
 .movie:hover {
@@ -32,14 +35,17 @@
   height: 200px; /* Fixed height */
   border-bottom: 3px solid #0a7cff;
   object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+  border-radius: 4px;
 }
 
 .movie h2 {
   font-size: 1rem;
+  margin: 0;
   height: 3rem; /* Fixed height for the title */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  max-width: 90%;
 }
 
 .movie h2,

@@ -17,7 +17,7 @@ const SearchInput = ({
         type="text"
       />
       <Button className="search-button" onClick={callSearchFunction}>
-        Search
+        if () Search
       </Button>
     </div>
   )
