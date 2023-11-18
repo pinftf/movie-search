@@ -1,16 +1,23 @@
-movie {
-  background-color: #f4f4f4;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.movie {
+  background-color: #3494e6; /* A deep, futuristic blue */
+  color: #e0e5ec; /* Light color for text to contrast with the dark  */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   overflow: hidden;
   margin: 15px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 350px; /* Adjust based on your needs */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex-grow: 1; /* Allows this section to fill the space after the image */
 }
 
-.movie img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
+.movie:hover {
+  background-color: aliceblue;
+  color: black;
+  transform: translateY(-5px); /* Slightly raise the card on hover */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .movie-list {
@@ -20,8 +27,52 @@ movie {
   padding: 20px;
 }
 
+.movie img {
+  width: 100%; /* Full width of the card */
+  height: 200px; /* Fixed height */
+  border-bottom: 3px solid #0a7cff;
+  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+}
+
+.movie h2 {
+  font-size: 1rem;
+  height: 3rem; /* Fixed height for the title */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie h2,
+.movie p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.movie p {
+  font-size: 0.9rem;
+  height: 4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @media screen and (max-width: 600px) {
   .movie-list {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .movie img {
+    height: 150px;
+  }
+
+  .movie h2 {
+    height: auto;
+  }
+
+  .movie p {
+    height: auto;
+  }
+
+  .movie {
+    height: auto;
   }
 }

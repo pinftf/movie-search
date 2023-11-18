@@ -18,7 +18,7 @@ const SearchLogic = () => {
 
       <div className="movie-list">
         {movies && movies.length > 0 ? (
-          movies.map((movie, index) => <MovieCard key={index} movie={movie} />)
+          movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} />)
         ) : (
           <div>No movies found </div>
         )}

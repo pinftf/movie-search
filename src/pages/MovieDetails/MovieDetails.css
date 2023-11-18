@@ -1,0 +1,16 @@
+.movie-detail {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 8px;
+}
+
+.movie-detail h2 {
+  font-size: 1.8rem;
+}
+
+.movie-detail p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

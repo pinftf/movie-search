@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import '../MovieDetail/MovieDetail.css'
+
 const MovieDetail = ({ movie }) => {
   if (!movie) {
     return <div>Loading...</div>

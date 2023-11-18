@@ -1,0 +1,33 @@
+.movie-detail {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  text-align: center;
+}
+
+.movie-detail h1,
+.movie-detail p {
+  margin: 10px 0;
+}
+.movie-detail h1 {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.movie-detail p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+.movie-detail img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}

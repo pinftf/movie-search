@@ -1,4 +1,3 @@
-// import { array } from 'prop-types'
 import React, { useState } from 'react'
 
 const FavoriteButton = () => {

@@ -5,11 +5,12 @@
   transition: border-color 0.3s;
   font-family: 'Cinzel', sans-serif;
   font-size: 36px;
+  cursor: pointer;
   letter-spacing: 10px;
 }
 
 .header:hover {
-  border-color: #3494e6; /* Change border color on hover */
+  border-color: #3494e6;
 }
 
 .header h1 {
