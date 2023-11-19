@@ -5,8 +5,13 @@ import { useOMDBApi } from '../useOMDBApi'
 import { debounce } from 'lodash'
 
 const SearchLogic = () => {
-  const { searchValue, handleSearchInputValues, callSearchFunction, movies } =
-    useOMDBApi()
+  const {
+    searchValue,
+    handleSearchInputValues,
+    callSearchFunction,
+    movies,
+    loading
+  } = useOMDBApi()
   const [searchPerfomed, setSearchPerformed] = useState(false)
   const debouncedSearch = useCallback(
     debounce(() => {
@@ -20,7 +25,6 @@ const SearchLogic = () => {
 
   useEffect(() => {
     debouncedSearch()
-
     return () => debouncedSearch.cancel()
   }, [searchValue, debouncedSearch])
 
@@ -28,6 +32,7 @@ const SearchLogic = () => {
     debouncedSearch()
     setSearchPerformed(true)
   }
+
   return (
     <div>
       <SearchInput
@@ -35,14 +40,19 @@ const SearchLogic = () => {
         handleSearchInputValues={handleSearchInputValues}
         callSearchFunction={handleSearch}
       />
-
-      <div className="movie-list">
-        {searchPerfomed && movies && movies.length > 0 ? (
-          movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} />)
-        ) : searchPerfomed && (!movies || movies.length === 0) ? (
-          <div>No movies found</div>
-        ) : null}
-      </div>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <div className="movie-list">
+          {searchPerfomed && movies && movies.length > 0 ? (
+            movies.map((movie) => (
+              <MovieCard key={movie.imdbID} movie={movie} />
+            ))
+          ) : searchPerfomed && (!movies || movies.length === 0) ? (
+            <div>No movies found</div>
+          ) : null}
+        </div>
+      )}
     </div>
   )
 }

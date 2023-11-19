@@ -16,9 +16,6 @@ const SearchInput = ({
         onChange={handleSearchInputValues}
         type="text"
       />
-      <Button className="search-button" onClick={callSearchFunction}>
-        if () Search
-      </Button>
     </div>
   )
 }

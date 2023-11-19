@@ -14,3 +14,22 @@
   font-size: 1rem;
   line-height: 1.6;
 }
+
+.loading,
+.error,
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.error {
+  color: #ff4d4d;
+}
+
+.not-found {
+  color: #4d88ff;
+}

@@ -5,9 +5,13 @@ const OMDB_API_KEY = '51ffa113'
 const useMovieDetails = (movieId) => {
   console.log('Fetching details for movie ID:', movieId)
   const [movie, setMovie] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchMovieById = async () => {
+      setLoading(true)
+      setError(null)
       try {
         const response = await fetch(
           `https://www.omdbapi.com/?i=${movieId}&apikey=${OMDB_API_KEY}`
@@ -19,6 +23,9 @@ const useMovieDetails = (movieId) => {
         setMovie(data)
       } catch (error) {
         console.error('Error fetching movie details', error)
+        setError(error.message)
+      } finally {
+        setLoading(false)
       }
     }
 
@@ -27,7 +34,7 @@ const useMovieDetails = (movieId) => {
     }
   }, [movieId])
 
-  return movie
+  return { movie, loading, error }
 }
 
 export default useMovieDetails
