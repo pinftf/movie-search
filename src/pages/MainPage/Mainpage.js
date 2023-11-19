@@ -9,7 +9,6 @@ const Mainpage = () => {
   const defaultMovies = useDefaultMovies()
   return (
     <div className="main-page">
-      <Header />
       <SearchLogic />
       <div className="movie-list">
         {defaultMovies.map((movie) => (

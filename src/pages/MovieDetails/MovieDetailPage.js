@@ -29,7 +29,6 @@ const MovieDetailPage = () => {
 
   return (
     <div className="movie-detail-page">
-      <Header />
       <MovieDetail movie={movie} />
     </div>
   )
