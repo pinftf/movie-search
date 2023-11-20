@@ -39,7 +39,7 @@ const MovieCard = ({ movie }) => {
       <p>
         ({movie.Year}){' '}
         <Button
-          classname={`favorite-button ${isFavorite ? 'active' : ''}`}
+          className={`favorite-button ${isFavorite ? 'active' : ''}`}
           onClick={handleFavoriteClick}
           icon={<Heart />}
         />
