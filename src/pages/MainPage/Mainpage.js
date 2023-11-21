@@ -1,22 +1,50 @@
 import React from 'react'
-import Header from '../../components/Header/Header'
-import SearchLogic from '../../components/Search/SearchLogic'
-import './Mainpage.css'
-import { useDefaultMovies } from '../../components/useDefaultMovies'
-import MovieCard from '../../components/MovieCard/MovieCard'
 
-const Mainpage = () => {
-  const defaultMovies = useDefaultMovies()
-  return (
-    <div className="main-page">
-      <SearchLogic />
-      <div className="movie-list">
-        {defaultMovies.map((movie) => (
-          <MovieCard key={movie.imdbID} movie={movie} />
-        ))}
+import MovieCard from '../../components/Cards/MovieCard'
+import { useOMDBApi } from '../../hooks/useOMDBApi'
+import SearchInput from '../../components/Search/SearchInput'
+import SkeletonCard from '../../components/Cards/SkeletonCard'
+
+const MainPage = () => {
+  const { searchValue, handleSearchInputValues, movies, loading } = useOMDBApi()
+
+  const RenderMovies = () => {
+    if (loading) {
+      return (
+        <div className="movie-list">
+          {new Array(10).fill(0).map((_, index) => (
+            <SkeletonCard key={index} />
+          ))}
+        </div>
+      )
+    }
+
+    if (movies && movies.length > 0 && !loading) {
+      return (
+        <div className="movie-list">
+          {movies.map((movie) => (
+            <MovieCard key={movie.imdbID} movie={movie} />
+          ))}
+        </div>
+      )
+    }
+
+    return (
+      <div className="no-results">
+        No movies found. Please try a different search.
       </div>
+    )
+  }
+
+  return (
+    <div className="page">
+      <SearchInput
+        searchValue={searchValue}
+        onSearchValueChange={handleSearchInputValues}
+      />
+      <RenderMovies />
     </div>
   )
 }
 
-export default Mainpage
+export default MainPage

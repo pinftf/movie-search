@@ -23,6 +23,10 @@
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
+.button--transparent {
+  color: #333;
+  background-color: transparent;
+}
 
 .button--small {
   font-size: 12px;
@@ -43,32 +47,4 @@
 
 .button--with-icon > div:first-child {
   margin-right: 12px;
-}
-
-.favorite-button {
-  background-color: transparent;
-  color: #0a7cff;
-  border: 2px solid #0a7cff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  text-shadow: none;
-}
-
-.favorite-button:hover {
-  background-color: #0a7cff;
-  color: #fff;
-  border-color: #3494e6;
-}
-
-.favorite-button.active {
-  background-color: #eba714;
-  color: #fff;
-  border-color: #0a7cff;
 }

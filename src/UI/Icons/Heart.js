@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
-export const Heart = ({ color = 'red', size = 24 }) => {
+export const Heart = ({ color = 'red', size = 24, style }) => {
   return (
-    <div style={{ color, height: size, width: size }}>
+    <div style={{ color, height: size, width: size, ...style }}>
       <svg
         fill="currentColor"
         version="1.1"
@@ -11,8 +11,8 @@ export const Heart = ({ color = 'red', size = 24 }) => {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 475.528 475.528"
         xmlSpace="preserve"
-        stroke="currentColor">
-        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+        stroke={'currentColor'}>
+        <g id="SVGRepo_bgCarrier" strokeWidth="1"></g>
         <g
           id="SVGRepo_tracerCarrier"
           strokeLinecap="round"
@@ -33,6 +33,7 @@ export const Heart = ({ color = 'red', size = 24 }) => {
 }
 Heart.propTypes = {
   color: PropTypes.string,
-  size: PropTypes.oneOf([24, 32, 48])
+  size: PropTypes.oneOf([24, 32, 48]),
+  style: PropTypes.object
 }
 export default Heart

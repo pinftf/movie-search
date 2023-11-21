@@ -3,9 +3,8 @@ import { useState, useEffect } from 'react'
 const OMDB_API_KEY = '51ffa113'
 
 const useMovieDetails = (movieId) => {
-  console.log('Fetching details for movie ID:', movieId)
   const [movie, setMovie] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {

@@ -12,7 +12,8 @@ export const Button = ({
   const type = {
     primary: 'button--primary',
     secondary: 'button--secondary',
-    ghost: 'button--ghost'
+    ghost: 'button--ghost',
+    transparent: 'button--transparent'
   }
 
   return (
@@ -32,11 +33,12 @@ export const Button = ({
 }
 
 Button.propTypes = {
-  variant: PropTypes.oneOf(['primary', 'secondary', 'ghost']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'transparent']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   onClick: PropTypes.func,
   icon: PropTypes.node,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node,
+  className: PropTypes.string
 }
 
 Button.defaultProps = {

@@ -5,22 +5,20 @@
 }
 
 .input-field {
-  width: 70%;
+  width: 100%;
   padding: 10px;
-  margin-right: 10px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 8px;
+  transition: border 0.3s ease-in-out;
 }
 
-.search-button {
-  padding: 10px 15px;
-  background-color: #3494e6;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.input-field:focus {
+  outline: none;
+  border: 1px solid #b3b3b3;
 }
 
-.search-button:hover {
-  background-color: #45a049;
+@media (min-width: 768px) {
+  .input-field {
+    width: 70%;
+  }
 }

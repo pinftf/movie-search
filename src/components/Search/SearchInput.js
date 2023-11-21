@@ -1,19 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Input } from '../../UI'
+import { Input } from '../../UI'
 import './SearchInput.css'
 
-const SearchInput = ({
-  searchValue,
-  handleSearchInputValues,
-  callSearchFunction
-}) => {
+const SearchInput = ({ searchValue, onSearchValueChange }) => {
   return (
     <div className="search-input-container">
       <Input
         className="input-field"
         value={searchValue}
-        onChange={handleSearchInputValues}
+        placeholder="Search for a movie"
+        onChange={onSearchValueChange}
         type="text"
       />
     </div>
@@ -22,8 +19,7 @@ const SearchInput = ({
 
 SearchInput.propTypes = {
   searchValue: PropTypes.string.isRequired,
-  handleSearchInputValues: PropTypes.func.isRequired,
-  callSearchFunction: PropTypes.func.isRequired
+  onSearchValueChange: PropTypes.func.isRequired
 }
 
 export default SearchInput

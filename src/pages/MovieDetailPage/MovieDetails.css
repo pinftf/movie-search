@@ -33,3 +33,8 @@
 .not-found {
   color: #4d88ff;
 }
+
+.movie-loader {
+  max-width: 800px;
+  margin: 20px auto;
+}

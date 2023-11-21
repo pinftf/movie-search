@@ -1,22 +1,24 @@
 import React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import useMovieDetails from '../../components/useMovieDetails'
-import Header from '../../components/Header/Header'
+import { useParams } from 'react-router-dom'
+import useMovieDetails from '../../hooks/useMovieDetails'
+
 import MovieDetail from '../../UI/MovieDetail/MovieDetail'
-import '../MovieDetails/MovieDetails.css'
+import './MovieDetails.css'
+import SkeletonCard from '../../components/Cards/SkeletonCard'
 
 const MovieDetailPage = () => {
   const { id } = useParams()
-  const navigate = useNavigate()
+
   const { movie, loading, error } = useMovieDetails(id)
 
-  if (!id) {
-    console.error('Movie ID is undefined')
-    navigate('/')
-    return null
-  }
   if (loading) {
-    return <div className="loading">Loading movie details...</div>
+    return (
+      <div className="movie-detail-page">
+        <div className="movie-loader">
+          <SkeletonCard />
+        </div>
+      </div>
+    )
   }
 
   if (error) {
@@ -24,7 +26,7 @@ const MovieDetailPage = () => {
   }
 
   if (!movie || movie.Response === 'False') {
-    return <div className="not-found">MOvie not found</div>
+    return <div className="not-found">Movie not found</div>
   }
 
   return (
